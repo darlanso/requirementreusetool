@@ -76,8 +76,8 @@ module.exports.connections = {
   ***************************************************************************/
   PostgresqlServer: {
      adapter: 'sails-postgresql',
-     host: 'ec2-54-243-249-154.compute-1.amazonaws.com',
-     ssl: false 
+     url: 'postgres://mmsatkgapuimzf:2ECv3ViIWL3Tfwb4Ixan0sFuBO@ec2-54-243-249-154.compute-1.amazonaws.com:5432/dctkhu915kfvuj',
+      
    }
 
 
