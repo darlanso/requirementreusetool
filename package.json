@@ -35,8 +35,8 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/gandalf0/requirementreusetool.git"
+    "url": "git://github.com/gandalf06/requirementreusetool.git"
   },
-  "author": "gandalf0",
+  "author": "Darlan Oliveira",
   "license": ""
 }
