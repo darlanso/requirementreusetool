@@ -1,0 +1,7 @@
+{
+  "generators": {
+    "modules": {
+    "sails-sass": "sails-generate-sass" // Add This Line
+    }
+  }
+}

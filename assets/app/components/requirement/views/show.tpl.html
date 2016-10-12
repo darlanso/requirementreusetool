@@ -1,0 +1,95 @@
+<div  layout="column" ng-cloak class="md-inline-form">
+  <md-content layout-padding>
+    <div>
+      <form ng-submit="vm.create(vm.requirement)" >
+      <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+        <div>
+          <md-input-container>
+            <label>Título</label>
+            <input ng-model="vm.requirement.title" ng-value="vm.requirement.title">
+          </md-input-container>
+
+          <md-input-container>
+            <label>Versão</label>
+            <input ng-model="vm.requirement.version" type="text">
+          </md-input-container>
+        </div>
+      </md-content>
+<br>
+ <md-divider></md-divider>
+<br>
+        <div layout-gt-xs="row">
+          <md-input-container class="md-block" flex-gt-xs>
+            <label>Autor</label>
+            <input ng-model="vm.requirement.author" type="text">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Fonte</label>
+            <input ng-model="vm.requirement.source" type="text">
+          </md-input-container>
+        </div>
+
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Proposito</label>
+            <input ng-model="vm.requirement.objective" type="text">
+          </md-input-container>
+        </div>
+
+        <md-input-container class="md-block">
+          <label>Dados especificos</label>
+          <input ng-model="vm.requirement.specifics">
+        </md-input-container>
+
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Importância</label>
+            <input ng-model="vm.requirement.importance" type="text">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Urgencia</label>
+          <md-select ng-model="vm.requirement.urgency">
+              <md-option value="Alta">Alta</md-option>
+              <md-option value="Media">Media</md-option>
+              <md-option value="Baixa">Baixa</md-option>
+            </md-select>
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Intervalo de tempo</label>
+            <input name="tempo" ng-model="vm.requirement.timeinterval" placeholder="12h"
+                     md-maxlength="10">
+
+            <div ng-messages="requirementForm.tempo.$error" role="alert" multiple>
+              <div ng-message="required" class="my-message">Todos os campos são obrigatorios</div>
+            </div>
+          </md-input-container>
+        </div>
+
+        <md-input-container class="md-block">
+          <label>Descrição para o cliente</label>
+          <textarea ng-model="vm.requirement.descriptionforclient" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+        </md-input-container>
+        
+        <md-input-container class="md-block">
+          <label>Descrição para equipe de desenvolvimento</label>
+          <textarea ng-model="vm.requirement.descriptionforteam" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Comentarios</label>
+          <textarea ng-model="vm.requirement.comments" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+        </md-input-container>
+        <md-input-container class="md-block">
+         <md-button class="md-raised md-primary" type="submit">Salvar nova versão</md-button>
+         <md-button class="md-raised md-primary" ng-click="vm.update(vm.requirement)">Atualizar versão</md-button>
+         <md-button class="md-raised md-primary" ng-click="vm.cancele()">Cancelar</md-button>
+         <md-button ng-click="vm.printRerquirement(vm.requirement)" class="md-raised md-primary" >Gerar documento <i class="material-icons">picture_as_pdf</i></md-button>
+        </md-input-container>
+      </form>
+    </div>
+  </md-content>
+
+</div>

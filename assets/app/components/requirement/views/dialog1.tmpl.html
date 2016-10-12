@@ -1,0 +1,31 @@
+<md-dialog aria-label="Mango (Fruit)">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Prototipagem</h2>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+       <div class="navbar-inner">
+        <div class="container form-inline" style="text-align: center;">
+          <div class="btn btn-droppable" ng-repeat="item in vm.list5" data-drop="true" ng-model='vm.list5' data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=vm.list5])'}"  jqyoui-droppable="{index: {{$index}}}">
+            <div class="btn btn-info btn-draggable" data-drag="{{item.drag}}" data-jqyoui-options="{revert: 'invalid'}" ng-model="vm.list5" jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}" ng-hide="!item.title">{{item.title}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="btn btn-primary" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="vm.list1" jqyoui-draggable="{animate:true}" ng-hide="!vm.list1.title">{{vm.list1.title}}</div>
+
+     <div class="thumbnail" data-drop="true" data-jqyoui-options ng-model="vm.list2" jqyoui-droppable style='height:850px;width:1050px;'>
+      <div class="btn btn-success" data-drag="false" data-jqyoui-options ng-model="vm.list2" jqyoui-draggable ng-hide="!vm.list2.title">{{vm.list2.title}}</div>
+    </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+     
+       <md-button ng-disabled="true" class="md-raised md-primary">Descartar</md-button>
+       <md-button ng-disabled="true" class="md-raised md-primary">Anexar ao requisito</md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

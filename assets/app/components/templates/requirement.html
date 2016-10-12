@@ -1,0 +1,50 @@
+            <heder>
+                <title>Documento de requisito {{requirement.title}} - {{requirement.version}}</title>
+                <style>
+                    .primary{
+                        margin-left: 75px;
+                        margin-right: 75px;
+                        padding: 30px;
+                        border-width: 6px;
+                        border-style: double;
+                        }
+                    
+                    .th3{
+                        text-align: center;
+                    }
+                </style>
+            </heder>
+           <div class="primary"> 
+            <div class="cls1">
+                <h3 class="th3">Documento de requisito</h3>
+            <label><strong>Título:</strong></label>
+            <p>{{requirement.title}}</p>
+            <label><strong>Versão:</strong></label>
+            <p>{{requirement.version}}</p><br>
+            </div>
+            <div class="cls2">
+            <label><strong>Autor:</strong></label>
+            <p>{{requirement.author}}</p><br>
+            <label><strong>Fonte:</strong></label>
+            <p>{{requirement.source}}</p><br>
+            <label><strong>Proposito:</strong></label>
+            <p>{{requirement.objective}}</p><br>
+            <label><strong>Dados especificos:</strong></label>
+            <p>{{requirement.specifics}}</p><br>
+            <label><strong>Importância:</strong></label>
+            <p>{{requirement.importance}}</p><br>
+            <label><strong>Urgencia:</strong></label>
+            <p>{{requirement.urgency}}</p><br>
+            <div class="cls3">
+            <label><strong>Intervalo de tempo:</strong></label><br>
+            <p>{{requirement.timeinterval}}</p><br>
+            </div>
+            <label><strong>Descrição para o cliente:</strong></label><br>
+
+            <p>{{requirement.descriptionforclient}}</p><br>
+          
+            <label><strong>Descrição para equipe de desenvolvimento</strong></label><br>
+            <p>{{requirement.descriptionforteam}}</p><br>
+            </div>
+            </div>
+            <input type="button" name="imprimir" value="Imprimir" onclick="window.print();">

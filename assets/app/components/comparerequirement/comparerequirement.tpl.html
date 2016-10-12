@@ -1,0 +1,145 @@
+<h1>Requisitos</h1>
+<div layout-gt-sm="row">
+        <md-input-container class="md-block">
+               <a ui-sref="requirement" href="#"><md-button class="md-raised md-primary" >Inicio</md-button></a>
+        </md-input-container>
+
+        <md-input-container class="md-block">
+                 <a ui-sref="requirementnew" href="#"><md-button class="md-raised md-primary" >Novo Requisito</md-button></a> 
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <md-button class="md-raised md-primary" ng-click="vm.getAll()">Listar Requisitos</md-button>
+        </md-input-container>
+      
+        <md-input-container class="md-block">
+                 <a ui-sref="requirementcompare" href="#"><md-button class="md-raised md-primary" >Comparar requisito</md-button></a> 
+        </md-input-container>
+           
+        <md-input-container class="md-block">
+        <form ng-submit="vm.findByname(vm.title)">
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block">
+              <input placeholder="Busca" ng-model="vm.title">
+            </md-input-container>
+            <md-input-container class="md-block">
+              <button type="submit" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"><i class="material-icons">search</i></button>
+            </md-input-container>
+          </div>
+         </form>
+        </md-input-container>
+</div>       
+ <md-divider></md-divider>
+
+        <md-subheader class="md-no-sticky mdl-layout-title">Comparar requisitos</md-subheader>
+        
+        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+  <thead ng-init="vm.initial()">
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">ID</th>
+      <th class="mdl-data-table__cell--non-numeric">Titulo</th>
+      <th class="mdl-data-table__cell--non-numeric">Versão</th>
+      <th class="mdl-data-table__cell--non-numeric">Autor</th>
+      <th class="mdl-data-table__cell--non-numeric"></th>
+    </tr>
+  </thead>
+  <tbody>
+      
+    <tr ng-repeat="requirement in vm.requirements">
+      
+      
+        <td class="mdl-data-table__cell--non-numeric">{{requirement.id}}</td>
+        <td class="mdl-data-table__cell--non-numeric">{{requirement.title}}</td>
+        <td class="mdl-data-table__cell--non-numeric">{{requirement.version}}</td>
+        <td class="mdl-data-table__cell--non-numeric">{{requirement.author}}</td>
+        <td class="mdl-data-table__cell--non-numeric">
+          
+    <span>X</span> <input type="radio" ng-model="checkedX" ng-change="vm.compareX(requirement)" ng-value="requirement">
+    <span>Y</span> <input type="radio" ng-model="checkedY" ng-change="vm.compareY(requirement)"  ng-value="requirement"><br/>
+          <div ng-show="checkedX">
+              <p>Selecionado</p>
+          </div>
+        <div ng-show="checkedY ">
+              <p>selecionado</p>
+          </div>
+            </td>
+        
+    </tr>
+    
+  </tbody>
+
+</table>
+<br>
+ <md-divider></md-divider>
+<br>
+<md-content style="float: left;margin-left: 50px;
+    margin-top: 10px;" ng-show="vm.requirementX != undefined">
+            <h4>Requisito X</h4><br>
+            <label>Título:</label><br>
+            <p>{{vm.requirementX.title}}</p><br>
+            <label>Versão:</label><br>
+            <p>{{vm.requirementX.version}}</p><br>
+            <label>Autor:</label><br>
+            <p>{{vm.requirementX.author}}</p><br>
+            <label>Fonte:</label><br>
+            <p>{{vm.requirementX.source}}</p><br>
+            <label>Proposito: </label><br>
+            <p>{{vm.requirementX.objective}}</p><br>
+            <label>Dados especificos:</label><br>
+            <p>{{vm.requirementX.specifics}}</p><br>
+            <label>Importância:</label><br>
+            <p>{{vm.requirementX.importance}}</p><br>
+            <label>Urgencia:</label><br>
+            <p>{{vm.requirementX.urgency}}</p><br>
+           
+            <label>Intervalo de tempo:</label><br>
+            <p>{{vm.requirementX.timeinterval}}</p><br>
+            
+            <label>Descrição para o cliente:</label><br>
+
+            <p>{{vm.requirementX.descriptionforclient}}</p><br>
+          
+            <label>Descrição para equipe de desenvolvimento</label><br>
+            <p>{{vm.requirementX.descriptionforteam}}</p><br>
+          
+            <label>Comentarios</label><br>
+            <p>{{vm.requirementX.comments}}</p><br>
+            <md-button ng-click="vm.printRerquirement(vm.requirementX)" class="md-raised md-primary" >Gerar documento <i class="material-icons">picture_as_pdf</i></md-button>
+  </md-content>
+
+<md-content style="float: right;margin-right: 400px;
+    margin-top: 10px;" ng-show="vm.requirementY != undefined">
+            <h4>Requisito Y</h4><br>
+            <label>Título:</label><br>
+            <p>{{vm.requirementY.title}}</p><br>
+            <label>Versão:</label><br>
+            <p>{{vm.requirementY.version}}</p><br>
+            <label>Autor:</label><br>
+            <p>{{vm.requirementY.author}}</p><br>
+            <label>Fonte:</label><br>
+            <p>{{vm.requirementY.source}}</p><br>
+            <label>Proposito: </label><br>
+            <p>{{vm.requirementY.objective}}</p><br>
+            <label>Dados especificos:</label><br>
+            <p>{{vm.requirementY.specifics}}</p><br>
+            <label>Importância:</label><br>
+            <p>{{vm.requirementY.importance}}</p><br>
+            <label>Urgencia:</label><br>
+            <p>{{vm.requirementY.urgency}}</p><br>
+           
+            <label>Intervalo de tempo:</label><br>
+            <p>{{vm.requirementY.timeinterval}}</p><br>
+            
+            <label>Descrição para o cliente:</label><br>
+
+            <p>{{vm.requirementY.descriptionforclient}}</p><br>
+          
+            <label>Descrição para equipe de desenvolvimento</label><br>
+            <p>{{vm.requirementY.descriptionforteam}}</p><br>
+          
+            <label>Comentarios</label><br>
+            <p>{{vm.requirementY.comments}}</p><br>
+            <md-button ng-click="vm.printRerquirement(vm.requirementY)" class="md-raised md-primary" >Gerar documento <i class="material-icons">picture_as_pdf</i></md-button>
+  </md-content>
+
+  

@@ -1,0 +1,72 @@
+<h1>Requisitos</h1>
+<div layout-gt-sm="row">
+        <md-input-container class="md-block">
+               <a ui-sref="requirement" href="#"><md-button class="md-raised md-primary" >Inicio</md-button></a>
+        </md-input-container>
+
+        <md-input-container class="md-block">
+                 <a ui-sref="requirementnew" href="#"><md-button class="md-raised md-primary" >Novo Requisito</md-button></a> 
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <md-button class="md-raised md-primary" ng-click="vm.getAll()">Listar Requisitos</md-button>
+        </md-input-container>
+      
+        <md-input-container class="md-block">
+                 <a ui-sref="requirementcompare" href="#"><md-button class="md-raised md-primary" >Comparar requisitos</md-button></a> 
+        </md-input-container>
+           
+        <md-input-container class="md-block">
+        <form ng-submit="vm.findByname(vm.title)">
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block">
+              <input placeholder="Busca" ng-model="vm.title">
+            </md-input-container>
+            <md-input-container class="md-block">
+              <button type="submit" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"><i class="material-icons">search</i></button>
+            </md-input-container>
+          </div>
+         </form>
+        </md-input-container>
+</div>
+        
+              
+        <md-divider></md-divider>
+
+        <md-subheader class="md-no-sticky mdl-layout-title">Requisitos cadastrados</md-subheader>
+        
+        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+  <thead ng-init="vm.initial()">
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">ID</th>
+      <th class="mdl-data-table__cell--non-numeric">Titulo</th>
+      <th class="mdl-data-table__cell--non-numeric">Versão</th>
+      <th class="mdl-data-table__cell--non-numeric">Autor</th>
+      <th class="mdl-data-table__cell--non-numeric"></th>
+    </tr>
+  </thead>
+  <tbody>
+      
+    <tr ng-repeat="requirement in vm.requirements">
+      
+      
+        <td class="mdl-data-table__cell--non-numeric">{{requirement.id}}</td>
+        <td class="mdl-data-table__cell--non-numeric">{{requirement.title}}</td>
+        <td class="mdl-data-table__cell--non-numeric">{{requirement.version}}</td>
+        <td class="mdl-data-table__cell--non-numeric">{{requirement.author}}</td>
+        <td class="mdl-data-table__cell--non-numeric">
+           <button ng-click="vm.show(requirement)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+              <i class="material-icons">check</i>
+          </button>
+          <button ng-click="vm.edit(requirement)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+              <i class="material-icons">edit</i>
+          </button>
+          <button ng-click="vm.deleteR(requirement)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+              <i class="material-icons">delete</i>
+          </button>
+        </td>
+    </tr>
+    
+  </tbody>
+</table>
+<div ui-view></div>
