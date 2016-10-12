@@ -15,6 +15,7 @@
         this.show = show;
         //function for requirement        
         this.create = create;
+        this.createVersion = createVersion;
         this.update = update;
         this.select = select;
         this.deleteR = deleteR;
@@ -30,7 +31,7 @@
             vm.getAll(); 
         }
                 
-        function create(){
+        function createVersion(){
             this.requirement = vm.requirement; 
             delete this.requirement['id'];
             
@@ -65,6 +66,31 @@
                 console.log(status)
             });     
         }
+
+        function create(){
+            this.requirement = vm.requirement; 
+            delete this.requirement['id'];
+            
+                RequirementService.requirementPost(this.requirement).success(function(data,status){
+                $mdDialog.show(
+                $mdDialog.alert()
+                    .parent(angular.element(document.querySelector('#popupContainer')))
+                    .clickOutsideToClose(true)
+                    .title('Novo requisito salvo com sucesso!')
+                    .textContent('Requisito:'+this.requirement.title+' Versão'+this.requirement.version)
+                    .ariaLabel('Alert Dialog Demo')
+                    .ok('OK!')
+                  //  .targetEvent(ev)
+                );     
+                    $location.path('/requirement');
+                    console.log(status)
+                }).error(function(data,status){
+                    console.log(status)
+                });
+                        
+    
+        }
+
 
         function update(){
                     RequirementService.requirementPut(vm.requirement).success(function(data,status){

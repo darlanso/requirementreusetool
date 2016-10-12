@@ -1,7 +1,7 @@
 <div  layout="column" ng-cloak class="md-inline-form">
   <md-content layout-padding>
     <div>
-      <form ng-submit="vm.create(vm.requirement)" >
+      <form ng-submit="vm.createVersion(vm.requirement)" >
       <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
         <div>
           <md-input-container>
@@ -84,7 +84,6 @@
         </md-input-container>
         <md-input-container class="md-block">
          <md-button class="md-raised md-primary" type="submit">Salvar nova versão</md-button>
-         <md-button class="md-raised md-primary" ng-click="vm.update(vm.requirement)">Atualizar versão</md-button>
          <md-button class="md-raised md-primary" ng-click="vm.cancele()">Cancelar</md-button>
          <md-button ng-click="vm.printRerquirement(vm.requirement)" class="md-raised md-primary" >Gerar documento <i class="material-icons">picture_as_pdf</i></md-button>
         </md-input-container>
