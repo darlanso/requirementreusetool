@@ -56,7 +56,7 @@ module.exports.session = {
   ***************************************************************************/
 
    host: 'ec2-54-243-249-154.compute-1.amazonaws.com',
-   port: 5432,
+   port: 6379,
    db: 0,
    pass: '2ECv3ViIWL3Tfwb4Ixan0sFuBO',
    prefix: 'redis:',
