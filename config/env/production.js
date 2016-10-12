@@ -36,7 +36,7 @@ module.exports = {
   // }
   
   models: {
-    connection: 'heroku_mongolab'
+    connection: 'PostgresqlServer'
   },
 
 };

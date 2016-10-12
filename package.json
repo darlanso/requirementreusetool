@@ -20,8 +20,7 @@
     "sails": "~0.12.4",
     "sails-disk": "~0.10.9",
     "sails-generate-bower": "0.0.2",
-    "sails-generate-sass": "0.0.51",
-    "sails-mongo": "^0.12.1"
+    "sails-generate-sass": "0.0.51"
   },
   "name": "requirementreusetool",
   "private": true,

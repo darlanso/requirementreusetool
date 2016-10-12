@@ -74,13 +74,10 @@ module.exports.connections = {
   *                                                                          *
   *                                                                          *
   ***************************************************************************/
-  // somePostgresqlServer: {
-  //   adapter: 'sails-postgresql',
-  //   host: 'YOUR_POSTGRES_SERVER_HOSTNAME_OR_IP_ADDRESS',
-  //   user: 'YOUR_POSTGRES_USER', // optional
-  //   password: 'YOUR_POSTGRES_PASSWORD', // optional
-  //   database: 'YOUR_POSTGRES_DB' //optional
-  // }
+  PostgresqlServer: {
+     adapter: 'sails-postgresql',
+     host: 'ec2-54-243-249-154.compute-1.amazonaws.com', 
+   }
 
 
   /***************************************************************************
@@ -88,10 +85,7 @@ module.exports.connections = {
   * More adapters: https://github.com/balderdashy/sails                      *
   *                                                                          *
   ***************************************************************************/
-  heroku_mongolab: {
-    adapter: 'sails-mongo',
-    url: process.env.MONGODB_URI
-  }
+
 
 
 };
