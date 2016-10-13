@@ -18,7 +18,6 @@
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
   'styles/**/*.css',
-  'styles/**/*.scss',
   'vendor/angular-material/*.css',
   'vendor/material-design-lite/material.min.css',
 ];
@@ -44,7 +43,15 @@ var jsFilesToInject = [
   'vendor/material-design-lite/material.min.js',
   'vendor/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js', 
   'vendor/angular-dragdrop/angular-dragdrop.js',
-  'app/**/*.js',
+  'app/app.js',
+  'app/components/comparerequirement/comparerequirement.ctrl.js',
+  'app/components/comparerequirement/comparerequirement.route.js',
+  'app/components/main/main.ctrl.js',
+  'app/components/main/main.route.js',
+  'app/components/requirement/requirement.ctrl.js',
+  'app/components/requirement/requirement.route.js',
+  'app/services/PrintRequirement.service.js',
+  'app/services/requirement.service.js',
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
