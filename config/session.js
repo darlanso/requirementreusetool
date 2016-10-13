@@ -54,13 +54,13 @@ module.exports.session = {
   * https://github.com/visionmedia/connect-redis                             *
   *                                                                          *
   ***************************************************************************/
-
-  host: 'c2-54-235-205-98.compute-1.amazonaws.com',
-  port: 11589,
+  url: 'redis://h:pgabvkiub4td7d4orfvr5eqh5d@ec2-54-235-205-98.compute-1.amazonaws.com:11589'
+  //host: 'c2-54-235-205-98.compute-1.amazonaws.com',
+  //port: 11589,
   //ttl: <redis session TTL in seconds>,
   //db: 0,
-  pass: 'pgabvkiub4td7d4orfvr5eqh5d',
-  prefix: 'redis:'
+  //pass: 'pgabvkiub4td7d4orfvr5eqh5d',
+  //prefix: 'redis:'
 
 
   /***************************************************************************
