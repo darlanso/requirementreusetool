@@ -53,15 +53,14 @@
         <td class="mdl-data-table__cell--non-numeric">{{requirement.version}}</td>
         <td class="mdl-data-table__cell--non-numeric">{{requirement.author}}</td>
         <td class="mdl-data-table__cell--non-numeric">
-          
-    <span>X</span> <input type="radio" ng-model="checkedX" ng-change="vm.compareX(requirement)" ng-value="requirement">
-    <span>Y</span> <input type="radio" ng-model="checkedY" ng-change="vm.compareY(requirement)"  ng-value="requirement"><br/>
-          <div ng-show="checkedX">
+     <form >     
+    <span>X</span> <input type="radio" ng-model="checkedX" name="checked" ng-change="vm.compareX(requirement)" ng-value="requirement">
+    <span>Y</span> <input type="radio" ng-model="checkedY" name="checked" ng-change="vm.compareY(requirement)"  ng-value="requirement"><br/>
+          <div ng-show="checkedX || checkedY">
               <p>Selecionado</p>
           </div>
-        <div ng-show="checkedY ">
-              <p>selecionado</p>
-          </div>
+        
+     </form>     
             </td>
         
     </tr>
