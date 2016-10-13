@@ -44,7 +44,7 @@ module.exports.session = {
   *                                                                          *
   ***************************************************************************/
 
- //adapter: 'connect-redis',
+ adapter: 'connect-redis',
 
   /***************************************************************************
   *                                                                          *
@@ -55,12 +55,12 @@ module.exports.session = {
   *                                                                          *
   ***************************************************************************/
 
-  //host: 'localhost',
-  //port: 6379,
+  host: 'c2-54-235-205-98.compute-1.amazonaws.com',
+  port: 11589,
   //ttl: <redis session TTL in seconds>,
   //db: 0,
-  //pass: <redis auth password>
-  //prefix: 'sess:'
+  pass: 'pgabvkiub4td7d4orfvr5eqh5d',
+  prefix: 'sess:'
 
 
   /***************************************************************************
