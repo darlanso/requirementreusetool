@@ -60,7 +60,7 @@ module.exports.session = {
   //ttl: <redis session TTL in seconds>,
   //db: 0,
   pass: 'pgabvkiub4td7d4orfvr5eqh5d',
-  prefix: 'sess:'
+  prefix: 'redis:'
 
 
   /***************************************************************************
