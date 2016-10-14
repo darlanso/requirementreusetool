@@ -61,7 +61,7 @@ module.exports.connections = {
     host: 'localhost',
     port: 5432,
     user: 'postgres', //optional
-    password: 'ino3d@sk892', //optional
+    password:'', //optional
     database: 'testedb' //optional
    },
 
