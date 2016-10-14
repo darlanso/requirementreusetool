@@ -3,15 +3,25 @@
     <div>
       <form ng-submit="vm.createVersion(vm.requirement)" >
       <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
-        <div>
+       <div>
           <md-input-container>
             <label>Título</label>
-            <input ng-model="vm.requirement.title" ng-value="vm.requirement.title">
+            <input required name="title" ng-model="vm.requirement.title">
+            <div ng-messages="requirementForm.title.$error" role="alert" multiple>
+              <div ng-message="required" class="my-message">Todos os campos são obrigatorios</div>
+          </div>
           </md-input-container>
 
           <md-input-container>
             <label>Versão</label>
-            <input ng-model="vm.requirement.version" type="text">
+            <input required name="version" ng-model="vm.requirement.version" type="text">
+            <div ng-messages="requirementForm.version.$error" role="alert" multiple>
+              <div ng-message="required" class="my-message">Todos os campos são obrigatorios</div>
+          </div>
+          </md-input-container>
+          
+          <md-input-container class="md-block">
+           <md-button class="md-raised md-primary" ng-click="vm.showAdvanced($event)">Prototipo de tela</md-button>
           </md-input-container>
         </div>
       </md-content>
@@ -21,36 +31,51 @@
         <div layout-gt-xs="row">
           <md-input-container class="md-block" flex-gt-xs>
             <label>Autor</label>
-            <input ng-model="vm.requirement.author" type="text">
+            <input required name="author" ng-model="vm.requirement.author" type="text">
+            <div ng-messages="requirementForm.author.$error" role="alert" multiple>
+              <div ng-message="required" class="my-message">Todos os campos são obrigatorios</div>
+          </div>
           </md-input-container>
 
           <md-input-container class="md-block" flex-gt-sm>
             <label>Fonte</label>
-            <input ng-model="vm.requirement.source" type="text">
+            <input required name="source" ng-model="vm.requirement.source" type="text">
+            <div ng-messages="requirementForm.source.$error" role="alert" multiple>
+              <div ng-message="required" class="my-message">Todos os campos são obrigatorios</div>
+          </div>
           </md-input-container>
         </div>
 
         <div layout-gt-sm="row">
           <md-input-container class="md-block" flex-gt-sm>
             <label>Proposito</label>
-            <input ng-model="vm.requirement.objective" type="text">
+            <input required name="objective" ng-model="vm.requirement.objective" type="text">
+            <div ng-messages="requirementForm.objective.$error" role="alert" multiple>
+              <div ng-message="required" class="my-message">Todos os campos são obrigatorios</div>
+          </div>
           </md-input-container>
         </div>
 
         <md-input-container class="md-block">
           <label>Dados especificos</label>
-          <input ng-model="vm.requirement.specifics">
+          <input required name="specifics" ng-model="vm.requirement.specifics">
+          <div ng-messages="requirementForm.specifics.$error" role="alert" multiple>
+              <div ng-message="required" class="my-message">Todos os campos são obrigatorios</div>
+          </div>
         </md-input-container>
 
         <div layout-gt-sm="row">
           <md-input-container class="md-block" flex-gt-sm>
             <label>Importância</label>
-            <input ng-model="vm.requirement.importance" type="text">
+            <input required name="importance" ng-model="vm.requirement.importance" type="text">
+            <div ng-messages="requirementForm.importance.$error" role="alert" multiple>
+              <div ng-message="required" class="my-message">Todos os campos são obrigatorios</div>
+          </div>
           </md-input-container>
 
           <md-input-container class="md-block" flex-gt-sm>
             <label>Urgencia</label>
-          <md-select ng-model="vm.requirement.urgency">
+           <md-select ng-model="vm.requirement.urgency">
               <md-option value="Alta">Alta</md-option>
               <md-option value="Media">Media</md-option>
               <md-option value="Baixa">Baixa</md-option>
@@ -59,28 +84,36 @@
 
           <md-input-container class="md-block" flex-gt-sm>
             <label>Intervalo de tempo</label>
-            <input name="tempo" ng-model="vm.requirement.timeinterval" placeholder="12h"
+            <input name="tempo" required ng-model="vm.requirement.timeinterval" placeholder="12h"
                      md-maxlength="10">
-
-            <div ng-messages="requirementForm.tempo.$error" role="alert" multiple>
+                     <div ng-messages="requirementForm.tempo.$error" role="alert" multiple>
               <div ng-message="required" class="my-message">Todos os campos são obrigatorios</div>
-            </div>
+          </div>
           </md-input-container>
         </div>
 
         <md-input-container class="md-block">
           <label>Descrição para o cliente</label>
-          <textarea ng-model="vm.requirement.descriptionforclient" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+          <textarea required name="descriptionforclient" ng-model="vm.requirement.descriptionforclient" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+          <div ng-messages="requirementForm.descriptionforclient.$error" role="alert" multiple>
+              <div ng-message="required" class="my-message">Todos os campos são obrigatorios</div>
+          </div>
         </md-input-container>
         
         <md-input-container class="md-block">
           <label>Descrição para equipe de desenvolvimento</label>
-          <textarea ng-model="vm.requirement.descriptionforteam" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+          <textarea required name="descriptionforteam" ng-model="vm.requirement.descriptionforteam" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+          <div ng-messages="requirementForm.descriptionforteam.$error" role="alert" multiple>
+              <div ng-message="required" class="my-message">Todos os campos são obrigatorios</div>
+          </div>
         </md-input-container>
 
         <md-input-container class="md-block">
           <label>Comentarios</label>
-          <textarea ng-model="vm.requirement.comments" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+          <textarea required name="comments" ng-model="vm.requirement.comments" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+          <div ng-messages="requirementForm.comments.$error" role="alert" multiple>
+              <div ng-message="required" class="my-message">Todos os campos são obrigatorios</div>
+          </div>
         </md-input-container>
         <md-input-container class="md-block">
          <md-button class="md-raised md-primary" type="submit">Salvar nova versão</md-button>
