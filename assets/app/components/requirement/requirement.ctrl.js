@@ -77,7 +77,7 @@
                     .parent(angular.element(document.querySelector('#popupContainer')))
                     .clickOutsideToClose(true)
                     .title('Novo requisito salvo com sucesso!')
-                    .textContent('Requisito:'+vm.requirement.title+' Versão'+vm.requirement.version)
+                    .textContent('Aperto Ok para continuar')
                     .ariaLabel('Alert Dialog Demo')
                     .ok('OK!')
                   //  .targetEvent(ev)
