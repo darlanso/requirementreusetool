@@ -12,33 +12,69 @@
                     .th3{
                         text-align: center;
                     }
+                    table{
+                        width:100%;
+                    }
+                    table, th, td {
+                      border: 1px solid black;
+                    }
+                    td {
+                        text-align:center;
+                    }
                 </style>
             </heder>
            <div class="primary"> 
             <div class="cls1">
                 <h3 class="th3">Documento de requisito {{requirement.title}} - {{requirement.version}}</h3>
-            <label><strong>Título:</strong></label>
-            <p>{{requirement.title}}</p>
-            <label><strong>Versão:</strong></label>
-            <p>{{requirement.version}}</p><br>
-            </div>
+            
             <div class="cls2">
-            <label><strong>Autor:</strong></label>
-            <p>{{requirement.author}}</p><br>
-            <label><strong>Fonte:</strong></label>
-            <p>{{requirement.source}}</p><br>
-            <label><strong>Proposito:</strong></label>
-            <p>{{requirement.objective}}</p><br>
-            <label><strong>Dados especificos:</strong></label>
-            <p>{{requirement.specifics}}</p><br>
-            <label><strong>Importância:</strong></label>
-            <p>{{requirement.importance}}</p><br>
-            <label><strong>Urgencia:</strong></label>
-            <p>{{requirement.urgency}}</p><br>
-            <div class="cls3">
-            <label><strong>Intervalo de tempo:</strong></label><br>
-            <p>{{requirement.timeinterval}}</p><br>
+                 <table>
+                    <tr>
+                        <th>Título</th>
+                        <th>versão</th>
+                    </tr>
+                    <tr>
+                        <td>{{requirement.title}}</td>
+                        <td>{{requirement.version}}</td>
+                    </tr>
+                    <tr>
+                        <th>Autor</th>
+                        <th>Fonte</th>
+                    </tr>
+                    <tr>
+                        <td>{{requirement.author}}</td>
+                        <td>{{requirement.source}}</td>
+                    </tr>
+                    <tr>
+                        <th>Proposito</th>
+                        <th>Dados especificos</th>
+                    </tr>
+                    <tr>
+                        <td>{{requirement.objective}}</td>
+                        <td>{{requirement.specifics}}</td>
+                    </tr>
+                    <tr>
+                        <th>Importância</th>
+                        <th>Urgencia</th>
+                    </tr>                
+                    <tr>
+                        <td>{{requirement.importance}}</td>
+                        <td>{{requirement.urgency}}</td>
+                    </tr>
+                    
+                </table>
+                <br>
+                <table>
+                    <tr>
+                          <th>Intervalo de tempo</th>
+                    </tr>
+                    <tr >
+                        <td>{{requirement.timeinterval}}</td>
+                    </tr>
+                </table>
             </div>
+<br>
+<br>
             <label><strong>Descrição para o cliente:</strong></label><br>
 
             <p>{{requirement.descriptionforclient}}</p><br>
