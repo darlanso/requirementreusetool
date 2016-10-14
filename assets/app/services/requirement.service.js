@@ -5,8 +5,8 @@
         .module('app')
         .service('RequirementService', RequirementService);
 
-    RequirementService.$inject = ['$http'];
-    function RequirementService($http){
+    RequirementService.$inject = ['$http','API'];
+    function RequirementService($http,API){
 
             this.requirementPost = requirementPost;
             this.requirementGet = requirementGet;
@@ -18,29 +18,29 @@
             
 
             function requirementPost(requirement) { 
-                return $http.post('http://localhost:1337/requirement',requirement);
+                return $http.post(API.url+'requirement',requirement);
             }
 
             function requirementGet(requirement) { 
-                return $http.get('http://localhost:1337/requirement',requirement);
+                return $http.get(API.url+'requirement',requirement);
             }
             
-            function requirementGetAll(requirement) { 
-                return $http.get('http://localhost:1337/requirement');
+            function requirementGetAll() { 
+                return $http.get(API.url+'requirement');
             }
 
             function requirementPut(requirement) { 
-                return $http.put('http://localhost:1337/requirement/'+requirement.id,requirement);
+                return $http.put(API.url+'requirement/'+requirement.id,requirement);
             }
 
             function requirementDelete(requirement) { 
-                return $http.delete('http://localhost:1337/requirement?id='+requirement.id);
+                return $http.delete(API.url+'requirement?id='+requirement.id);
             }
 
             function requirementFindByName(title) { 
-                return $http.get('http://localhost:1337/requirement?title='+title);
+                return $http.get(API.url+'requirement?title='+title);
             }
             function requirementVerific(title,version) { 
-                return $http.get('http://localhost:1337/requirement?title='+title+"&version="+version);
+                return $http.get(API.url+'requirement?title='+title+"&version="+version);
             }
         }

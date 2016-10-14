@@ -44,6 +44,7 @@ var jsFilesToInject = [
   'vendor/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js', 
   'vendor/angular-dragdrop/angular-dragdrop.js',
   'app/app.js',
+  'app/common/constants/host.js',
   'app/components/comparerequirement/comparerequirement.ctrl.js',
   'app/components/comparerequirement/comparerequirement.route.js',
   'app/components/main/main.ctrl.js',
@@ -52,6 +53,7 @@ var jsFilesToInject = [
   'app/components/requirement/requirement.route.js',
   'app/services/PrintRequirement.service.js',
   'app/services/requirement.service.js',
+  
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
