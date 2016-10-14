@@ -25,7 +25,9 @@
 
         this.printRerquirement = printRerquirement;
         vm.valide = true; 
-        
+        vm.requirement = {};
+        vm.requirements = {}
+               
         function initial(){
             vm.cancele();
             vm.getAll(); 
